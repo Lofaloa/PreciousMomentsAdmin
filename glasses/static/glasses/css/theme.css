@@ -1,0 +1,16 @@
+
+/* Required to correct the overlapping navbar */ 
+body { padding-top: 100px; }
+
+section {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 114px;
+  }
