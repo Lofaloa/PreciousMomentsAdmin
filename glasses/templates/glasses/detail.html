@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   
-  <title>Precious Moments</title>
+  <title>Détails - {{ glass.name }}s</title>
   
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -19,26 +19,12 @@
 
 <body>
   <section>
-    {% if glasses %}
-    <div class="row justify-content-center">
-      {% for glass in glasses %}
-      <div class="col-auto mb-3">
-        <!-- Card element documentation: https://getbootstrap.com/docs/4.3/components/card/ -->
-        <div class="card" style="width: 18rem;">
-          <img src="{{ glass.image.url }}" class="card-img-top" alt="Photo de {{ glass.name }}">
-          <div class="card-body">
-            <h5 class="card-title">{{ glass.name }}</h5>
-            <p class="card-text">{{ glass.price }}€ ({{ glass.amount }} unités disponibles)</p>
-            <a href="{% url 'detail' glass.id %}" class="btn btn-primary">Détails</a>
-            <a href="#" class="btn btn-danger">Supprimer</a>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-    {% else %}
-    <p>Aucunes réalisations.</p>
-    {% endif %}
+        <h1>{{ glass.name }}</h1>
+        <img src="{% url 'index' %}{{ glass.image.url}}" width="100px" alt="Photo de {{ glass.name }}"/>
+        <p>{{ glass.price }}€ ({{ glass.amount }} unités disponibles)</p>
+        <h2>Matériels</h2>
+        <h2>Étapes</h2>
+        <h2>Commentaires</h2>
   </section>
   <!-- Bootstrap core JavaScript -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
