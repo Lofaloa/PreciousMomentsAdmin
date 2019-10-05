@@ -19,14 +19,6 @@
 </head>
 
 <body>
-  <header>
-    <!-- Navigation -->
-    <nav class="navbar navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">Precious Moments</a>
-      </div>
-    </nav>
-  </header>
   <section>
     <h1>Mes réalisations</h1>
     {% if glasses %}
@@ -35,7 +27,7 @@
       <div class="col-auto mb-3">
         <!-- Card element documentation: https://getbootstrap.com/docs/4.3/components/card/ -->
         <div class="card" style="width: 18rem;">
-          <img src="http://placehold.it/200" class="card-img-top" alt="...">
+          <img src="{{ glass.image.url }}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">{{ glass.name }}</h5>
             <p class="card-text">{{ glass.price }}€ ({{ glass.amount }} unités disponibles)</p>
@@ -50,11 +42,6 @@
     <p>Aucunes réalisations.</p>
     {% endif %}
   </section>
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Logan Farci 2019</p>
-    </div>
-  </footer>
   <!-- Bootstrap core JavaScript -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
