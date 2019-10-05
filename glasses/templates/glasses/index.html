@@ -3,20 +3,14 @@
 {% block content %}
   <section class="main">
     <div class="card controller" style="width: 100%;">
-      <form>
-        <div class="form-group">
-          <label for="glass_name">Nom personnalisé du verre</label>
-          <input type="text" class="form-control" id="glass_name" placeholder="Entrez le nom personnalisé du verre...">
-        </div>
-        <div class="form-group">
-          <label for="glass_amount">Nombre de verres disponibles</label>
-          <input type="number" class="form-control" id="glass_amount" placeholder="Nombre de verres disponibles...">
-        </div>
-        <div class="form-group">
-            <label for="glass_image">Choisir une image de la réalisation</label>
-            <input type="file" class="form-control-file" id="glass_image" placeholder="Choisir une image">
-          </div>
-        <button type="submit" class="btn btn-primary">Ajouter une nouvelle réalisation</button>
+      <form action="get/" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          {% if glass_form is None %}
+            <p>Pas de formulaire!</p>
+          {% else %}
+            {{ glass_form.as_p }}
+          {% endif %}
+          <input type="submit" value="Ajouter une nouvelle réalisation">
       </form>
     </div>
     {% if glasses %}

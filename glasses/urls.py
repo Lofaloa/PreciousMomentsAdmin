@@ -9,6 +9,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     # ex: /glasses/5
     path('<int:glass_id>/', views.detail, name='detail'),
+    path('get/', views.get_glass, name='get_glass'),
 ]
 
 if settings.DEBUG:
