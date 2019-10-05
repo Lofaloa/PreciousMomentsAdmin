@@ -24,3 +24,8 @@ def get_glass(request):
         if form.is_valid():
             form.save()
     return redirect('index')
+
+def delete_glass(request, glass_id):
+    glass = get_object_or_404(Glass, pk=glass_id)
+    glass.delete()
+    return redirect('index')

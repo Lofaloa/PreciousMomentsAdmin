@@ -24,7 +24,7 @@
             <h5 class="card-title">{{ glass.name }}</h5>
             <p class="card-text">{{ glass.price }}€ ({{ glass.amount }} unités disponibles)</p>
             <a href="{% url 'detail' glass.id %}" class="btn btn-primary">Détails</a>
-            <a href="#" class="btn btn-danger">Supprimer</a>
+            <a href="{% url 'delete_glass' glass.id %}" class="btn btn-danger">Supprimer</a>
           </div>
         </div>
       </div>
