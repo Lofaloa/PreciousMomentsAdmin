@@ -18,11 +18,28 @@
 </head>
 
 <body>
-  <section>
+  <section class="main">
+    <div class="card controller" style="width: 100%;">
+      <form>
+        <div class="form-group">
+          <label for="glass_name">Nom personnalisé du verre</label>
+          <input type="text" class="form-control" id="glass_name" placeholder="Entrez le nom personnalisé du verre...">
+        </div>
+        <div class="form-group">
+          <label for="glass_amount">Nombre de verres disponibles</label>
+          <input type="number" class="form-control" id="glass_amount" placeholder="Nombre de verres disponibles...">
+        </div>
+        <div class="form-group">
+            <label for="glass_image">Choisir une image de la réalisation</label>
+            <input type="file" class="form-control-file" id="glass_image" placeholder="Choisir une image">
+          </div>
+        <button type="submit" class="btn btn-primary">Ajouter une nouvelle réalisation</button>
+      </form>
+    </div>
     {% if glasses %}
     <div class="row justify-content-center">
       {% for glass in glasses %}
-      <div class="col-auto mb-3">
+      <div class="col-auto m-3">
         <!-- Card element documentation: https://getbootstrap.com/docs/4.3/components/card/ -->
         <div class="card" style="width: 18rem;">
           <img src="{{ glass.image.url }}" class="card-img-top" alt="Photo de {{ glass.name }}">

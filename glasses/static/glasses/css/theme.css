@@ -3,3 +3,11 @@
 body {
   padding: 2%;
 }
+
+.main {
+  background: lightblue;
+}
+
+.controller {
+  padding: 2em;
+}
