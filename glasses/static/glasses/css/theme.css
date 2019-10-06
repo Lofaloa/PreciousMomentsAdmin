@@ -1,13 +1,38 @@
-/* Color palette: HEX: #f3c58f, #f07579, #ce3536, #747c24 */
+/*
+HEX: #5b9aa0
+HEX: #d6d4e0
+HEX: #b8a9c9*/
+
+:root {
+  --navbar-background-color: #622569;
+  --navbar-brand-background-color: #d6d4e0;
+  --controller-background-color:  #b8a9c9;
+  --card-background-color: #90ecf5;
+}
+
+nav {
+  background-color: var(--navbar-background-color);
+}
+
+.navbar-brand {
+  color: var(--navbar-brand-background-color);
+
+}
 
 article {
   padding: 2%;
 }
 
-.main {
-  background: lightblue;
-}
-
 .controller {
   padding: 2em;
+  background: var(--controller-background-color);
+}
+
+.glass-card {
+  background-color: var(--card-background-color);
+}
+
+footer {
+  background-color: var(--navbar-background-color);
+  color:  var(--navbar-brand-background-color);
 }

@@ -18,7 +18,7 @@
       {% for glass in glasses %}
       <div class="col-auto m-3">
         <!-- Card element documentation: https://getbootstrap.com/docs/4.3/components/card/ -->
-        <div class="card" style="width: 18rem;">
+        <div class="card glass-card" style="width: 18rem;">
           <img src="{{ glass.image.url }}" class="card-img-top" alt="Photo de {{ glass.name }}">
           <div class="card-body">
             <h5 class="card-title">{{ glass.name }}</h5>
