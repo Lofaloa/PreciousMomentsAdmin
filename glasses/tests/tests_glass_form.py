@@ -87,4 +87,3 @@ class GlassModelFormTests(TestCase):
             '-4.99'
         )
         self.assertFalse(form.is_valid())
-

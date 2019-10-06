@@ -1,18 +1,10 @@
 {% extends "glasses/page.html" %}
 
 {% block content %}
+  <div class="card controller" style="width: 100%;">
+    <a href="{% url 'add_glass' %}" class="btn btn-primary">Ajouter une nouvelle réalisation</a>      
+  </div>
   <section class="main">
-    <div class="card controller" style="width: 100%;">
-      <form action="get/" method="post" enctype="multipart/form-data">
-          {% csrf_token %}
-          {% if glass_form is None %}
-            <p>Pas de formulaire!</p>
-          {% else %}
-            {{ glass_form.as_p }}
-          {% endif %}
-          <input type="submit" value="Ajouter une nouvelle réalisation">
-      </form>
-    </div>
     {% if glasses %}
     <div class="row justify-content-center">
       {% for glass in glasses %}

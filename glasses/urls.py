@@ -13,6 +13,8 @@ urlpatterns = [
     path('get/', views.get_glass, name='get_glass'),
     #ex: /glasses/5/delete
     path('<int:glass_id>/delete', views.delete_glass, name='delete_glass'),
+    #ex: /glasses/add
+    path('add/', views.add_glass, name='add_glass')
 ]
 
 if settings.DEBUG:

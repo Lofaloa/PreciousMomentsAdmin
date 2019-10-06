@@ -1,0 +1,16 @@
+{% extends "glasses/page.html" %}
+
+{% block content %}
+<div class="card controller" style="width: 100%;">
+    <h1>Ajout d'une réalisation</h1>
+    <form action="{% url 'index'%}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% if form is None %}
+        <p>Pas de formulaire!</p>
+        {% else %}
+        {{ form.as_p }}
+        {% endif %}
+        <input type="submit" value="Ajouter une nouvelle réalisation">
+    </form>
+</div>
+{% endblock %}
