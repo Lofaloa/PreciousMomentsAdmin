@@ -43,7 +43,8 @@ def add_glass(request):
         if form.is_valid():
             form.save()
             return redirect('index')
+        else:
+            return "prix négatif!"
     else:
         form = GlassModelForm()
     return render(request, 'glasses/add.html', {'form': form})
-    

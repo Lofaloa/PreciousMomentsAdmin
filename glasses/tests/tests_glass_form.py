@@ -2,20 +2,15 @@ from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import TestCase
 from django.conf import settings
 from glasses.forms import GlassModelForm
+
+from unittest.mock import MagicMock
+from django.core.files import File
+
+from glasses.tests.test_image import TEST_IMAGE
+
 import os
 
 class GlassModelFormTests(TestCase):
-
-    def create_test_image(self):
-        """
-        Creates an image used to simulate an image uploaded by a user.
-        """
-        image_path = os.path.join(settings.MEDIA_ROOT, 'images/test_image.png')
-        return SimpleUploadedFile(
-            name='test_image.png',
-            content=open(image_path, 'rb').read(),
-            content_type='image/png'
-        )
 
     def create_glass_form(self, name, amount, price):
         """
@@ -24,24 +19,13 @@ class GlassModelFormTests(TestCase):
         form_data = {
             'name': name,
             'amount': amount,
-            'price': price,
-            'image': self.create_test_image()
+            'price': price
         }
-        return GlassModelForm(form_data)
-
-    def test_image_creation(self):
-        image= self.create_test_image()
-        self.assertIsNotNone(image)
+        return GlassModelForm(data=form_data, files={'image': MagicMock(spec=File, name='image')})
 
     def test_valid_data(self):
-        """
-        The form should be valid when all the specified data are valid.
-        """
-        form = self.create_glass_form(
-            'Verre à tournesol',
-            '5',
-            '4.99'
-        )
+        form = self.create_glass_form('Verre à tournesol', '5', '4.99')
+        print(form.errors.as_data())
         self.assertTrue(form.is_valid())
 
     def test_null_glass_name(self):

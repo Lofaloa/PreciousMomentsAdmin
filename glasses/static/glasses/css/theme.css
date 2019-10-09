@@ -4,10 +4,10 @@ HEX: #d6d4e0
 HEX: #b8a9c9*/
 
 :root {
-  --navbar-background-color: #622569;
-  --navbar-brand-background-color: #d6d4e0;
-  --controller-background-color:  #b8a9c9;
-  --card-background-color: #90ecf5;
+  --navbar-background-color: black;
+  --navbar-brand-background-color: #ffffff;
+  --controller-background-color:  #3b3b3b;
+  --card-background-color: #b5b5b5;
 }
 
 nav {
@@ -33,6 +33,8 @@ article {
 }
 
 footer {
+  position: relative;
   background-color: var(--navbar-background-color);
   color:  var(--navbar-brand-background-color);
+  bottom: 0;
 }
