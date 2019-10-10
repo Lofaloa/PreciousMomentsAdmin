@@ -4,7 +4,7 @@
 <div class="card controller" style="width: 100%;">
     <form class="form-horizontal" action="{% url 'index'%}" method="post" enctype='multipart/form-data'>{% csrf_token %}
         <fieldset>
-            <legend>Remplissez tous les champs et valider pour ajouter votre nouvelle réalisation!</legend>
+            <legend>Donnez une nouvelle valeur aux champs à modifier</legend>
             {% for field in form %}
                 {% if field.errors %}
                     <div class="control-group error">
@@ -28,7 +28,7 @@
             {% endfor %}
         </fieldset>
         <div class="form-actions">
-            <button type="submit" class="btn btn-secondary" title="Valider et revenir à la page d'acceuil">Ajouter la nouvelle réalisation</button>
+            <button type="submit" class="btn btn-secondary">Modifier</button>
         </div>
     </form>
 </div>

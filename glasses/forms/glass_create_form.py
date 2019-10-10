@@ -1,9 +1,17 @@
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 from django import forms
-from .models import Glass
+from glasses.models import Glass
 
-class GlassModelForm(forms.ModelForm):
+class GlassCreateForm(forms.ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['name'].required = True
+        self.fields['amount'].required = True
+        self.fields['price'].required = True
+        self.fields['image'].required = True
+
     class Meta:
         model = Glass
         fields = ('name', 'amount', 'price', 'image')

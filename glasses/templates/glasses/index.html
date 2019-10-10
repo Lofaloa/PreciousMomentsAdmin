@@ -2,7 +2,7 @@
 
 {% block content %}
   <div class="card controller" style="width: 100%;">
-    <a href="{% url 'add_glass' %}" class="btn btn-secondary pull-left">Ajouter une nouvelle réalisation</a>      
+    <a href="{% url 'add' %}" class="btn btn-secondary pull-left">Ajouter une nouvelle réalisation</a>      
   </div>
   <section class="main">
     {% if glasses %}
@@ -15,7 +15,7 @@
             <h5 class="card-title">{{ glass.name }}</h5>
             <p class="card-text">{{ glass.price }}€ ({{ glass.amount }} unités disponibles)</p>
             <a href="{% url 'detail' glass.id %}" class="btn btn-primary">Détails</a>
-            <a href="{% url 'delete_glass' glass.id %}" class="btn btn-danger">Supprimer</a>
+            <a href="{% url 'delete' glass.id %}" class="btn btn-danger">Supprimer</a>
           </div>
         </div>
       </div>

@@ -9,6 +9,8 @@
         <div class="card-body">
           <h5 class="card-title">{{ glass.name }}</h5>
           <p>{{ glass.price }}€ ({{ glass.amount }} unités disponibles)</p>
+          <a href="{% url 'edit' glass.id %}" class="btn btn-primary">Éditer</a>
+          <a href="{% url 'delete' glass.id %}" class="btn btn-primary">Supprimer</a>
         </div>
       </div>
     </div>

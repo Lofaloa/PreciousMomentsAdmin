@@ -6,8 +6,8 @@ HEX: #b8a9c9*/
 :root {
   --navbar-background-color: black;
   --navbar-brand-background-color: #ffffff;
-  --controller-background-color:  #3b3b3b;
-  --card-background-color: #b5b5b5;
+  --controller-background-color:  #9e9e9e;
+  --card-background-color: #ffffff;
 }
 
 nav {
@@ -33,8 +33,6 @@ article {
 }
 
 footer {
-  position: relative;
   background-color: var(--navbar-background-color);
   color:  var(--navbar-brand-background-color);
-  bottom: 0;
 }

@@ -9,12 +9,12 @@ urlpatterns = [
     path('', views.index, name='index'),
     # ex: /glasses/5
     path('<int:glass_id>/', views.detail, name='detail'),
-    #ex: /glasses/get
-    path('get/', views.get_glass, name='get_glass'),
-    #ex: /glasses/5/delete
-    path('<int:glass_id>/delete', views.delete_glass, name='delete_glass'),
     #ex: /glasses/add
-    path('add/', views.add_glass, name='add_glass')
+    path('add/', views.add, name='add'),
+    #ex: /glasses/5/delete
+    path('<int:glass_id>/delete', views.delete, name='delete'),
+    #ex: /glasses/5/edit
+    path('<int:glass_id>/edit', views.edit, name='edit')
 ]
 
 if settings.DEBUG:
