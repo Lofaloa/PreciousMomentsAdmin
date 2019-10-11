@@ -2,11 +2,13 @@
 
 {% block content %}
   <div class="card controller" style="width: 100%;">
-    <a href="{% url 'add' %}" class="btn btn-secondary pull-left">Ajouter une nouvelle réalisation</a>      
+    <div class="card-body">
+      <a href="{% url 'glass_create' %}" class="btn btn-secondary" id="add-glass-button">Nouvelle réalisation</a>      
+    </div>
   </div>
   <section class="main">
     {% if glasses %}
-    <div class="row justify-content-center">
+    <div class="row justify-content-left">
       {% for glass in glasses %}
       <div class="col-auto m-3">
         <div class="card glass-card" style="width: 18rem;">
@@ -14,14 +16,15 @@
           <div class="card-body">
             <h5 class="card-title">{{ glass.name }}</h5>
             <p class="card-text">{{ glass.price }}€ ({{ glass.amount }} unités disponibles)</p>
-            <a href="{% url 'detail' glass.id %}" class="btn btn-primary">Détails</a>
-            <a href="{% url 'delete' glass.id %}" class="btn btn-danger">Supprimer</a>
+            <a href="{% url 'glass_detail' glass.id %}" class="btn btn-primary">Détails</a>
+            <a href="{% url 'glass_delete' glass.id %}" class="btn btn-danger">Supprimer</a>
           </div>
         </div>
       </div>
       {% endfor %}
     </div>
     {% else %}
-    <p>Aucunes réalisations.</p>
+      <h2>C'est un peu vide ici!</h2>
+      <p>Vous n'avez pas de réalisations. Commencez votre collection en cliquant sur le bouton "<i>Nouvelle réalisation</i>".</p>
     {% endif %}
   {% endblock %}

@@ -1,0 +1,15 @@
+{% extends "glasses/page.html" %}
+
+{% block content%}
+<div class="container">
+  <div class="card mb-3" style="width: 18rem;">
+    <img class="card-img-top" src="{% url 'glass_list' %}{{ glass.image.url}}" width="100px" alt="Photo de {{ glass.name }}"/>
+    <div class="card-body">
+      <h5 class="card-title">{{ glass.name }}</h5>
+      <p>{{ glass.price }}€ ({{ glass.amount }} unités disponibles)</p>
+      <a href="{% url 'glass_update' glass.id %}" class="btn btn-primary">Modifier</a>
+      <a href="{% url 'glass_delete' glass.id %}" class="btn btn-primary">Supprimer</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
