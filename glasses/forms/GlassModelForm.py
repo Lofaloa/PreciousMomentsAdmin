@@ -3,14 +3,7 @@ from django.utils.translation import gettext_lazy as _
 from django import forms
 from glasses.models import Glass
 
-class GlassCreateForm(forms.ModelForm):
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['name'].required = True
-        self.fields['amount'].required = True
-        self.fields['price'].required = True
-        self.fields['image'].required = True
+class GlassModelForm(forms.ModelForm):
 
     class Meta:
         model = Glass
