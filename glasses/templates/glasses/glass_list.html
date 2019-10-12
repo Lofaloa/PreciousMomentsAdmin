@@ -1,9 +1,10 @@
 {% extends "glasses/page.html" %}
 
 {% block content %}
+  <a href="{% url 'glass_create' %}" class="btn btn-primary btn-lg" id="add-glass-button">Nouvelle réalisation</a>
   <div class="card controller" style="width: 100%;">
     <div class="card-body">
-      <a href="{% url 'glass_create' %}" class="btn btn-secondary" id="add-glass-button">Nouvelle réalisation</a>      
+      <a href="#" class="btn btn-secondary">Rechercher</a>      
     </div>
   </div>
   <section class="main">

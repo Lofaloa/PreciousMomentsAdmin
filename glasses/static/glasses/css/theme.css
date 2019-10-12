@@ -20,6 +20,14 @@ nav {
 
 article {
   padding: 2%;
+  margin-bottom: 15%;
+}
+
+#add-glass-button {
+  position: fixed;
+  right: 2%;
+  bottom: 11%;
+  z-index: 20000;
 }
 
 .controller {
@@ -43,4 +51,5 @@ article {
 footer {
   background-color: var(--navbar-background-color);
   color: var(--navbar-brand-background-color);
+  height: 50px;
 }
