@@ -7,16 +7,18 @@ class GlassModelForm(forms.ModelForm):
 
     class Meta:
         model = Glass
-        fields = ('name', 'amount', 'price', 'image')
+        fields = ('name', 'category', 'amount', 'price', 'image')
         labels = {
             "name": "Nom personnalisé",
-            "amount": "Nombre de verres disponibles",
+            "category": "Catégorie",
+            "amount": "Nombre de paires disponibles",
             "price": "Prix de vente",
             "image": "Photo du verre",
         }
         help_texts = {
             'name': 'Choisissez un nom unique qui correspond à votre réalisation',
-            'amount': 'La quantié doit être positive',
+            "category": "Ce champ correspond au type de votre réalisation",
+            'amount': 'Le nombre de paire doit être positif',
             'price': 'Le prix doit être positif',
             'image': 'Choisissez une photo qui représente votre réalisation',
         }

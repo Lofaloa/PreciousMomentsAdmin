@@ -3,11 +3,11 @@ from django.core.files import File
 from django.test import TestCase, override_settings
 from django.conf import settings
 
-from glasses.forms.glass_create_form import GlassCreateForm
+from glasses.forms.GlassModelForm import GlassModelForm
 
 import os
 
-class GlassCreateFormTests(TestCase):
+class GlassModelFormTests(TestCase):
 
     def get_image(self):
         path = os.path.join(settings.BASE_DIR, 'glasses/static/glasses/images/test_image.jpg')
@@ -19,7 +19,7 @@ class GlassCreateFormTests(TestCase):
 
     def create_glass_form(self, name, amount, price):
         form_data = {'name': name, 'amount': amount, 'price': price}
-        return GlassCreateForm(
+        return GlassModelForm(
             data=form_data, 
             files={'image': self.get_image()}
         )
@@ -118,7 +118,7 @@ class GlassCreateFormTests(TestCase):
 
     def test_null_image(self):
         form_data = {'name': "Verre", 'amount': "2", 'price': "2.99"}
-        form = GlassCreateForm(
+        form = GlassModelForm(
             data=form_data,
             files={'image': None}
         )

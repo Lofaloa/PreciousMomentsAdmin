@@ -15,7 +15,8 @@
           <img src="{{ glass.image.url }}" class="card-img-top" alt="Photo de {{ glass.name }}">
           <div class="card-body">
             <h5 class="card-title">{{ glass.name }}</h5>
-            <p class="card-text">{{ glass.price }}€ ({{ glass.amount }} unités disponibles)</p>
+            <p class="card-text">{{ glass.price }}€ ({{ glass.amount }} paires disponibles)</p>
+            <p>Catégorie: {{ glass.get_category_display }}</p>
             <a href="{% url 'glass_detail' glass.id %}" class="btn btn-primary">Détails</a>
             <a href="{% url 'glass_delete' glass.id %}" class="btn btn-danger">Supprimer</a>
           </div>
