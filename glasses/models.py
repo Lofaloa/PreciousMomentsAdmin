@@ -19,7 +19,7 @@ class GlassCategory(Enum):
 
 
 class Glass(models.Model):
-    name = models.CharField(max_length=50, null=False, blank=False)
+    name = models.CharField(max_length=50, null=False, blank=False, unique=True)
     category = models.CharField(max_length=50, null=False, blank=False, choices=GlassCategory.choices(), default=GlassCategory.UNDEFINED)
     amount = models.PositiveIntegerField(null=False, blank=False)
     price = models.FloatField(null=False, blank=False, validators=[MinValueValidator(0.0)])
