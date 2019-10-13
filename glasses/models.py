@@ -1,6 +1,8 @@
 from django.db import models
 from django.conf import settings
 from django.core.validators import MinValueValidator
+from django.utils import timezone
+
 import os
 
 from enum import Enum
@@ -24,6 +26,7 @@ class Glass(models.Model):
     amount = models.PositiveIntegerField(null=False, blank=False)
     price = models.FloatField(null=False, blank=False, validators=[MinValueValidator(0.0)])
     image = models.ImageField(upload_to='images/', blank=False)
+    creation_moment = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.name

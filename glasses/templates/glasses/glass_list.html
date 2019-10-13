@@ -4,7 +4,6 @@
   <a href="{% url 'glass_create' %}" class="btn btn-primary btn-lg" id="add-glass-button">Nouvelle réalisation</a>
   <div class="card controller" style="width: 100%;">
     <div class="card-body">
-      <input class="form-control" type="text" placeholder="Rechercher..."/>
       <a href="#" class="btn btn-secondary">Rechercher</a>      
     </div>
   </div>
@@ -18,7 +17,8 @@
           <div class="card-body">
             <h5 class="card-title">{{ glass.name }}</h5>
             <p class="card-text">{{ glass.price }}€ ({{ glass.amount }} paires disponibles)</p>
-            <p>Catégorie: {{ glass.get_category_display }}</p>
+            <p>Catégorie : {{ glass.get_category_display }}</p>
+            <p>Date de création : {{ glass.creation_moment }}</p>
             <a href="{% url 'glass_detail' glass.id %}" class="btn btn-primary">Détails</a>
             <a href="{% url 'glass_delete' glass.id %}" class="btn btn-danger">Supprimer</a>
           </div>

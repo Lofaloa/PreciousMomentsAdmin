@@ -8,6 +8,7 @@
       <h5 class="card-title">{{ glass.name }}</h5>
       <p>{{ glass.price }}€ ({{ glass.amount }} paires disponibles)</p>
       <p>Catégorie: {{ glass.get_category_display }}</p>
+      <p>Date de création : {{ glass.creation_moment }}</p>
       <a href="{% url 'glass_update' glass.id %}" class="btn btn-primary">Modifier</a>
       <a href="{% url 'glass_delete' glass.id %}" class="btn btn-primary">Supprimer</a>
     </div>
