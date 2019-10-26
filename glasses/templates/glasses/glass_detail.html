@@ -1,17 +1,37 @@
 {% extends "glasses/page.html" %}
 
 {% block content%}
-<div class="container">
-  <div class="card mb-3" style="width: 18rem;">
-    <img class="card-img-top" src="{% url 'glass_list' %}{{ glass.image.url}}" width="100px" alt="Photo de {{ glass.name }}"/>
-    <div class="card-body">
-      <h5 class="card-title">{{ glass.name }}</h5>
-      <p>{{ glass.price }}€ ({{ glass.amount }} paires disponibles)</p>
-      <p>Catégorie: {{ glass.get_category_display }}</p>
-      <p>Date de création : {{ glass.creation_moment }}</p>
-      <a href="{% url 'glass_update' glass.id %}" class="btn btn-primary">Modifier</a>
-      <a href="{% url 'glass_delete' glass.id %}" class="btn btn-primary">Supprimer</a>
+<h1>{{ glass.name }}</h1>
+<div class='card'>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-sm">
+        <img class="card-img-top glass-image-detail" src="{{ glass.image.url}}" alt="Photo de {{ glass.name }}"/>
+      </div>
+      <div class="col-sm-8 mt-3">
+        <h2>Détails de la réalisation</h2>
+        <ul>
+          <li><b>Prix :</b> {{ glass.price }}€</b></li>
+          <li><b>Nombre de paires disponibles :</b> {{ glass.amount }}</li>
+          <li><b>Catégorie :</b> {{ glass.get_category_display }}</li>
+          <li><b>Date d'ajout :</b> {{ glass.creation_moment }}</li>
+        </ul>
+      </div>
     </div>
   </div>
+</div>
+<div class="card mt-3">
+  <div class="card-header">Matériels</div>
+  <div class="card-body">
+      <ul>
+      {% for material in glass.material_set.all %}
+        <li>{{ material.name }} ({{ material.available_amount }} disponibles), achété à {{ material.supplier.name }}</li>
+      {% endfor %}
+      </ul>
+  </div>
+</div>
+<div class="m-3">
+  <a href="{% url 'glass_update' glass.id %}" class="btn btn-primary">Modifier</a>
+  <a href="{% url 'glass_delete' glass.id %}" class="btn btn-primary">Supprimer</a>
 </div>
 {% endblock %}
