@@ -1,0 +1,36 @@
+{% extends "glasses/page.html" %}
+
+{% block content %}
+    <a href="{% url 'material_create' %}" class="btn btn-primary btn-lg" id="material-create-button">Nouveau matériel</a>
+    <h1>Matériel disponible</h1>
+    {% if materials %}
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Quantité disponible</th>
+                    <th>Prix d'achat</th>
+                    <th>Fournisseur</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for material in materials %}
+                <tr>
+                    <td>{{ material.name }}</td>
+                    <td>{{ material.available_amount }}</td>
+                    <td>{{ material.price }}€</td>
+                    <td>{{ material.supplier.name }}</td>
+                    <td>
+                        <a href="{% url 'material_delete' material.id %}" class="material-button-icon btn"><i class="fa fa-trash"></i></a>
+                        <a href="{% url 'material_update' material.id %}" class="material-button-icon btn"><i class="fa fa-edit"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+      <h2>C'est un peu vide ici!</h2>
+      <p>Vous n'avez pas de matériels.</p>
+    {% endif %}
+{% endblock %}

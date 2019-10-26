@@ -1,0 +1,21 @@
+{% extends "glasses/page.html" %}
+
+{% block content%}
+<div class="container">
+  <div class="card mb-3" style="width: 100%%;">
+    <div class="card-header">
+        <h5 class="card-title">Suppression du matériel nommé "<i>{{ material.name }}</i>"</h5>
+    </div>
+    <div class="card-body">
+            <form method="post">
+            {% csrf_token %}
+            <div class="alert alert-warning" role="alert">
+                Êtes-vous sur de vouloir supprimer ce matériel? Toutes les données relatives seront perdues.
+            </div>
+            <button type="submit" class="btn btn-danger">Supprimer</button>
+            <a href="{{ view.get_success_url }}" class="btn btn-secondary">Annuler</a>
+        </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

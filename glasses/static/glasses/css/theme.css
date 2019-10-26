@@ -23,7 +23,7 @@ article {
   margin-bottom: 15%;
 }
 
-#add-glass-button {
+#glass-create-button, #material-create-button {
   position: fixed;
   right: 2%;
   bottom: 11%;
@@ -52,4 +52,10 @@ footer {
   background-color: var(--navbar-background-color);
   color: var(--navbar-brand-background-color);
   height: 50px;
+}
+
+.material-button-icon {
+    color: white; /* White text */
+    font-size: 20px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
 }

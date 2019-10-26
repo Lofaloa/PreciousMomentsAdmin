@@ -36,6 +36,10 @@ class Supplier(models.Model):
     name = models.CharField(max_length=50, null=False, blank=False, unique=False)
     website = models.URLField(null=True, blank=True)
 
+    def __str__(self):
+        return self.name
+
+
 class Material(models.Model):
     """ Represents a raw material used to craft glasses """
     name = models.CharField(max_length=50, null=False, blank=False, unique=False)

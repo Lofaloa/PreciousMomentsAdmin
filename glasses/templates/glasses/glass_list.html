@@ -1,7 +1,7 @@
 {% extends "glasses/page.html" %}
 
 {% block content %}
-  <a href="{% url 'glass_create' %}" class="btn btn-primary btn-lg" id="add-glass-button">Nouvelle réalisation</a>
+  <a href="{% url 'glass_create' %}" class="btn btn-primary btn-lg" id="glass-create-button">Nouvelle réalisation</a>
   <div class="card controller" style="width: 100%;">
     <div class="card-body">
       <form class="form-inline" action="{% url 'glass_list' %}" method="get">
