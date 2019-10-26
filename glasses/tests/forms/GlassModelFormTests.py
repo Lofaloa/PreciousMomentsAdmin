@@ -18,17 +18,19 @@ class GlassModelFormTests(TestCase):
             content_type='image/jpeg'
         )
 
-    def create_glass_form(self, name, amount, price):
-        form_data = {'name': name, 'amount': amount, 'price': price}
-        return GlassModelForm(
+    def create_glass_form(self, name="Verre", amount="2", price="1.99"):
+        form_data = {
+            'name': name,
+            'amount': amount,
+            'price': price
+        }
+        form = GlassModelForm(
             data=form_data, 
             files={'image': self.get_image()}
         )
+        return form
 
     def test_null_glass_name(self):
-        """
-        The form should not be valid when the glass name is null (None).
-        """
         form = self.create_glass_form(
             None,
             '5',
