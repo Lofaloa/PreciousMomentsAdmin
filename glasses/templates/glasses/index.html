@@ -1,0 +1,22 @@
+{% extends "glasses/page.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Gestion de vos réalisations</h5>
+                <p class="card-text">Consulter, modifier, créer et supprimer vos réalisations.</p>
+                <a href="{% url 'glass_list' %}" class="btn btn-primary">Gérer mes réalisations</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Gestion du matériel</h5>
+                <p class="card-text">Consulter, modifier, créer et supprimer les matériels que vous utilisez.</p>
+                <a href="#" class="btn btn-primary">Gérer mon matériel</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

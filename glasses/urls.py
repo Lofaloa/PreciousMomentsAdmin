@@ -2,6 +2,7 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
+from glasses.views.IndexView import IndexView
 from glasses.views.GlassListView import GlassListView
 from glasses.views.GlassDetailView import GlassDetailView
 from glasses.views.GlassCreateView import GlassCreateView
@@ -9,8 +10,10 @@ from glasses.views.GlassDeleteView import GlassDeleteView
 from glasses.views.GlassUpdateView import GlassUpdateView
 
 urlpatterns = [
+    # example: /
+    path('', IndexView.as_view(), name="index"),
     # example: glasses/
-    path('', GlassListView.as_view(), name="glass_list"),
+    path('glasses/', GlassListView.as_view(), name="glass_list"),
     # example: glasses/5    
     path('<int:pk>/', GlassDetailView.as_view(), name="glass_detail"),
     # example: glasses/create    
