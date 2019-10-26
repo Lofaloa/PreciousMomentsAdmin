@@ -55,6 +55,6 @@ class GlassListTests(TestCase):
         ))
         self.assertContains(response, "<h5 class=\"card-title\">Glass</h5>")
         self.assertContains(response, (
-            "<p class=\"card-text\">2.99€ (2 unités "
+            "<p class=\"card-text\">2.99€ (2 paires "
             "disponibles)</p>"
         ))

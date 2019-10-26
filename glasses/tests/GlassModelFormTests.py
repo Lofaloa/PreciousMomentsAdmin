@@ -4,6 +4,7 @@ from django.test import TestCase, override_settings
 from django.conf import settings
 
 from glasses.forms.GlassModelForm import GlassModelForm
+from glasses.models import GlassCategory
 
 import os
 
@@ -23,14 +24,6 @@ class GlassModelFormTests(TestCase):
             data=form_data, 
             files={'image': self.get_image()}
         )
-
-    def test_valid_glass(self):
-        form = self.create_glass_form(
-            'Verre',
-            '5',
-            '4.99'
-        )
-        self.assertTrue(form.is_valid())
 
     def test_null_glass_name(self):
         """
