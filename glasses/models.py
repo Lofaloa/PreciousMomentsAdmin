@@ -44,3 +44,6 @@ class Material(models.Model):
     supplier = models.ForeignKey(Supplier, null=True, on_delete=models.SET_NULL)
     glasses = models.ManyToManyField(Glass)
 
+    def __str__(self):
+        return self.name + " (" + "fournis par " + self.supplier.name + ")"
+
